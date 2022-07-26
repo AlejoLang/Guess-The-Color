@@ -60,6 +60,7 @@ body
 .playSection-question-color
 {
     width: 35%;
+    max-width: 160px;
     aspect-ratio: 1/1;
     background-color: aliceblue;
     margin: 2rem auto 3rem;
@@ -80,11 +81,13 @@ body
 {
     width: 30%;
     min-width: 75px;
+    max-width: 125px;
     aspect-ratio: 2/1;
     border: 1px solid #000;
     border-radius: 0.5rem;
     background-color: #7B435B;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .playSection-options-colorOption:hover
@@ -111,6 +114,7 @@ body
     border-radius: 3rem;
     font-size: 2.25rem;
     min-width: 100px;
+    max-width: 135px;
     background-color: var(--button-color);
     border: none;
 }
@@ -119,4 +123,16 @@ body
 {
     background-color: var(--accent-color);
     transform: scale(1.05);
+}
+
+/* Desktop design*/
+
+@media screen and (min-width: 800px) {
+    .main
+    {
+        width: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
 }

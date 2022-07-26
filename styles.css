@@ -1,0 +1,122 @@
+:root
+{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 10px;
+    font-display: swap;
+}
+
+*
+{
+    --background-color: #BAD1CD;
+    --text-color: #020300;
+    --button-color: #E086D3;
+    --accent-color: #8332AC;
+    padding: 0;
+    margin: 0;
+    transition: 0.25s ease all;
+}
+
+body
+{
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.main
+{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 3rem;
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+.pointsSection
+{
+    margin: 0 auto ;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.pointsSection-points
+{
+    font-weight: 700;
+}
+
+.playSection
+{
+    height: 50%;
+}
+
+.playSection-question
+{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.playSection-question-color
+{
+    width: 35%;
+    aspect-ratio: 1/1;
+    background-color: aliceblue;
+    margin: 2rem auto 3rem;
+    border-radius: 1rem;
+    border: 2px solid #000;
+}
+
+.playSection-options
+{
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.playSection-options-colorOption
+{
+    width: 30%;
+    min-width: 75px;
+    aspect-ratio: 2/1;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    background-color: #7B435B;
+    font-size: 1.5rem;
+}
+
+.playSection-options-colorOption:hover
+{
+    background-color: #8E4162;
+    transform: scale(1.1);
+}
+
+.controlSection
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.controlSection > button
+{
+    cursor: pointer;
+    width: 35%;
+    aspect-ratio: 2/1;
+    border-radius: 3rem;
+    font-size: 2.25rem;
+    min-width: 100px;
+    background-color: var(--button-color);
+    border: none;
+}
+
+.controlSection > button:hover
+{
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}

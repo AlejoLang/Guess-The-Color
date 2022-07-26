@@ -135,4 +135,10 @@ body
         overflow: hidden;
     }
 
+    .playSection-options
+    {
+        width: 75%;
+        min-width: 350px;
+        margin: 0 auto;
+    }
 }

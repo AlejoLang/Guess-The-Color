@@ -11,7 +11,7 @@ let hasChosen = true;
 const checkForPoints = () => {
     if(localStorage.getItem('GTCPoints'))
     {
-        modal.querrySelector('.messagePoints').textContent += localStorage.getItem('GTCPoints');
+        modal.querySelector('.messagePoints').textContent += localStorage.getItem('GTCPoints');
         modal.show();
     }
 }
@@ -29,6 +29,7 @@ document.querySelector('.loadDataBtn').addEventListener('click', () => {
 
 const init =  () => {
     checkForPoints();
+    console.log('a');
     pointsDiv.textContent = points;
     Object.entries(options)
             .forEach(([key, value]) => {

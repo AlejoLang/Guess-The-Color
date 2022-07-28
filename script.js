@@ -1,17 +1,48 @@
 let pointsDiv = document.querySelector('.pointsSection-points'),
     questionColor = document.querySelector('.playSection-question-color'),
     options = document.getElementsByClassName('playSection-options-colorOption'),
-    resetBtn = document.querySelector('.controlSection-resetBtn'),
-    nextQuestionBtn = document.querySelector('.controlSection-nextQuestionBtn');
+    colorCircle = document.querySelector('.colorCircle'),
+    modal = document.querySelector('.pointsSavedDialog');
 
 let points = 0;
 let color = '';
 let hasChosen = true;
 
-const init = () => {
-    pointsDiv.textContent = '0';
+const checkForPoints = () => {
+    if(localStorage.getItem('GTCPoints'))
+    {
+        modal.querrySelector('.messagePoints').textContent += localStorage.getItem('GTCPoints');
+        modal.show();
+    }
+}
+
+document.querySelector('.discardDataBtn').addEventListener('click', () => {
+    localStorage.removeItem('GTCPoints');
+    modal.close();
+}, false)
+
+document.querySelector('.loadDataBtn').addEventListener('click', () => {
+    points = localStorage.getItem('GTCPoints');
+    pointsDiv.textContent = points;
+    modal.close();
+}, false)
+
+const init =  () => {
+    checkForPoints();
+    pointsDiv.textContent = points;
+    Object.entries(options)
+            .forEach(([key, value]) => {
+                value.textContent = '';
+                value.addEventListener('click', (e) => {validateOption(e)});
+            })
+    hasChosen = true;
+    startRound();
+}
+
+const reset = () => {
     points = 0;
-    
+    pointsDiv.textContent = points;
+    localStorage.removeItem('GTCPoints');
     Object.entries(options)
             .forEach(([key, value]) => {
                 value.textContent = '';
@@ -52,13 +83,20 @@ const validateOption = (e) => {
     e.stopPropagation();
     e.preventDefault();
     if(btn.textContent == color){
-        alert('bien');
+        colorCircle.style['background-color'] = '#0F0';
         points++;
     } else {
-        alert('mal');
+        colorCircle.style['background-color'] = '#F00';
         points--;
     }
     pointsDiv.textContent = points;
+
+    colorCircle.classList.add('colorCircle-show');
+    colorCircle.addEventListener('webkitAnimationEnd', function(){
+        colorCircle.classList.remove('colorCircle-show');
+        colorCircle.removeEventListener('webkitAnimationEnd',  arguments.callee, false);
+    }, false);
+    
     Object.values(options)
             .forEach((value) => {
                 if(value.textContent != color){
@@ -68,6 +106,7 @@ const validateOption = (e) => {
                 }
             })
     hasChosen = true;
+    localStorage.setItem('GTCPoints', points);
 }
 
 window.addEventListener('load', init(), false)

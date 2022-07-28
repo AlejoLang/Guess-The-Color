@@ -12,6 +12,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <dialog class="pointsSavedDialog">
+            <p class="pointsSavedDialog-title">You have data saved</p>
+            <p class="pointsSavedDialog-message">
+                Seems that you have some points saved, do you want to load them?
+            </p>
+            <p class="pointsSavedDialog-message messagePoints">
+                Points saved: 
+            </p>
+            <div class="pointsSavedDialog-btnDiv">
+                <button class="discardDataBtn modalBtn">Discard</button>
+                <button class="loadDataBtn modalBtn"">Load</button>
+            </div>
+        </dialog>
         <div class="main">
             <section class="pointsSection">
                 <p class="pointsSection-text">Points</p>
@@ -29,9 +42,10 @@
                 </div>
             </section>
             <section class="controlSection">
-                <button class="controlSection-resetBtn" onclick="init()">Reset</button>
+                <button class="controlSection-resetBtn" onclick="reset()">Reset</button>
                 <button class="controlSection-nextQuestionBtn" onclick="startRound()">Next ></button>
             </section>
         </div>
+        <div class="colorCircle"></div>
     </body>
 </html>

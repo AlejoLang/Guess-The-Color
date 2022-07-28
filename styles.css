@@ -20,6 +20,59 @@ body
 {
     color: var(--text-color);
     background-color: var(--background-color);
+    overflow: hidden;
+}
+
+.pointsSavedDialog
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    padding: 1rem;
+    background-color: #9fb3af;
+}
+
+.pointsSavedDialog-title
+{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.pointsSavedDialog-message
+{
+    font-size: 1.6rem;
+}
+
+.pointsSavedDialog-btnDiv
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.modalBtn
+{
+    width: 30%;
+    margin-top: 1.5rem;
+    aspect-ratio: 3/1;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.modalBtn:hover
+{
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.modalBtn:last-of-type
+{
+    margin-left: auto;
 }
 
 .main
@@ -110,7 +163,7 @@ body
 {
     cursor: pointer;
     width: 35%;
-    aspect-ratio: 2/1;
+    aspect-ratio: 3/1;
     border-radius: 3rem;
     font-size: 2.25rem;
     min-width: 100px;
@@ -123,6 +176,38 @@ body
 {
     background-color: var(--accent-color);
     transform: scale(1.05);
+}
+
+.colorCircle
+{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    margin: 0 auto;
+    width: 1px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.colorCircle-show
+{
+    display: block;
+    animation: showCircle 0.5s ease forwards;
+}
+
+@keyframes showCircle {
+    from {
+        width: 1px;
+        opacity: 1;
+    }
+    to {
+        width: 120vh;
+        opacity: 0;
+    }
 }
 
 /* Desktop design*/
@@ -140,5 +225,16 @@ body
         width: 75%;
         min-width: 350px;
         margin: 0 auto;
+    }
+
+    @keyframes showCircle {
+        from {
+            width: 1px;
+            opacity: 1;
+        }
+        to {
+            width: 120vw;
+            opacity: 0;
+        }
     }
 }

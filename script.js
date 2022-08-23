@@ -59,19 +59,19 @@ const startRound = () => {
     Object.values(options)
             .forEach((value) => { value.style['background-color'] = '#7B435B';})
 
-    color = '#' + Math.floor(Math.random()*16777215)
-                            .toString(16)
-                            .toUpperCase();
+    color = Math.floor(Math.random()* 255) + ', ' +
+                Math.floor(Math.random()* 255) + ', ' +
+                Math.floor(Math.random()* 255);
 
-    let bait1 = '#' + Math.floor(Math.random()*16777215)
-                            .toString(16)
-                            .toUpperCase();
+    let bait1 = Math.floor(Math.random()* 255) + ', ' +
+                Math.floor(Math.random()* 255) + ', ' +
+                Math.floor(Math.random()* 255);
     
-    let bait2 = '#' + Math.floor(Math.random()*16777215)
-                            .toString(16)
-                            .toUpperCase();
+    let bait2 = Math.floor(Math.random()* 255) + ', ' +
+                Math.floor(Math.random()* 255) + ', ' +
+                Math.floor(Math.random()* 255);
 
-    questionColor.style['background-color'] = color;
+    questionColor.style['background-color'] = 'rgb(' + color + ')';
     let sortedOptions = Object.values(options).sort(() => Math.random() - 0.5);
     sortedOptions[0].textContent = color;
     sortedOptions[1].textContent = bait1;

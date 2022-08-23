@@ -133,7 +133,7 @@ body
 
 .playSection-options-colorOption
 {
-    width: fit-content;
+    width: 13ch;
     min-width: 75px;
     max-width: 125px;
     height: 5rem;

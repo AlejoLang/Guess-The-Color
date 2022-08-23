@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Guess the color</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset = UTF-8>
         <link rel = "stylesheet" href = "styles.css">
@@ -42,8 +42,8 @@
                 </div>
             </section>
             <section class="controlSection">
-                <button class="controlSection-resetBtn" onclick="reset()">Reset</button>
-                <button class="controlSection-nextQuestionBtn" onclick="startRound()">Next ></button>
+                <button class="controlSection-resetBtn" onclick="this.blur(); reset();">Reset</button>
+                <button class="controlSection-nextQuestionBtn" onclick="this.blur(); startRound()">Next ></button>
             </section>
         </div>
         <div class="colorCircle"></div>

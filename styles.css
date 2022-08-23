@@ -62,6 +62,7 @@ body
     border-radius: 1rem;
     font-size: 1.25rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .modalBtn:hover
@@ -132,18 +133,22 @@ body
 
 .playSection-options-colorOption
 {
-    width: 30%;
+    width: fit-content;
     min-width: 75px;
     max-width: 125px;
-    aspect-ratio: 2/1;
+    height: 5rem;
+    padding: 0.5rem;
     border: 1px solid #000;
     border-radius: 0.5rem;
     background-color: #7B435B;
     font-size: 1.5rem;
     cursor: pointer;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
-.playSection-options-colorOption:hover
+.playSection-options-colorOption:active
 {
     background-color: #8E4162;
     transform: scale(1.1);
@@ -172,7 +177,7 @@ body
     border: none;
 }
 
-.controlSection > button:hover
+.controlSection > button:active
 {
     background-color: var(--accent-color);
     transform: scale(1.05);
@@ -220,12 +225,35 @@ body
         overflow: hidden;
     }
 
+    .pointsSavedDialog
+    {
+        width: 50%;
+        max-width: 600px;
+    }
+
+    .modalBtn
+    {
+        height: 4rem;
+    }
+
     .playSection-options
     {
         width: 75%;
         min-width: 350px;
         margin: 0 auto;
     }
+
+    .playSection-options-colorOption:hover
+    {
+        background-color: #8E4162;
+        transform: scale(1.1);
+    }
+
+    .controlSection > button:hover
+{
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
 
     @keyframes showCircle {
         from {

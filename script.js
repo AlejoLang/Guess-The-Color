@@ -47,7 +47,7 @@ const reset = () => {
     Object.entries(options)
             .forEach(([key, value]) => {
                 value.textContent = '';
-                value.addEventListener('click', (e) => {validateOption(e)});
+                value.addEventListener('click', (event) => {validateOption(event)});
             })
     hasChosen = true;
     startRound();
@@ -78,11 +78,15 @@ const startRound = () => {
     sortedOptions[2].textContent = bait2;
 }
 
-const validateOption = (e) => {
+const validateOption = (event) => {
+    const btn = event.target;
+    btn.blur();
+
     if(hasChosen){return;}
-    const btn = e.target;
-    e.stopPropagation();
-    e.preventDefault();
+
+    event.stopPropagation();
+    event.preventDefault()
+
     if(btn.textContent == color){
         colorCircle.style['background-color'] = '#0F0';
         points++;
